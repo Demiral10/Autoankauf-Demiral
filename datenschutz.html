@@ -15,9 +15,10 @@
 <meta property="og:image" content="https://www.autoankauf-demiral.de/og-image.png">
 <meta property="og:type" content="website">
 <meta name="theme-color" content="#FFFFFF">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<!-- Schriften lokal — keine Verbindung zu Google-Servern -->
+<link rel="preload" href="fonts/InterTight-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/Inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="fonts.css">
 <style>
 :root{
   --bg:#FFFFFF; --bg-soft:#F5F7FA; --bg-soft2:#EEF2F7;
@@ -144,7 +145,8 @@ footer{
   <div class="card good">
     <h3>Das Wichtigste vorab</h3>
     <p>Diese Website setzt <strong>keine Cookies</strong>, verwendet <strong>keine Analyse- oder
-    Tracking-Dienste</strong> und erstellt <strong>keine Nutzerprofile</strong>. Die Angaben, die
+    Tracking-Dienste</strong> und erstellt <strong>keine Nutzerprofile</strong>. Die Schriftarten
+    werden <strong>lokal ausgeliefert</strong>, nicht von Google Fonts geladen. Die Angaben, die
     Sie in das Bewertungsformular eintragen, verlassen Ihren Browser erst, wenn Sie selbst auf
     „Per WhatsApp senden“ oder „Per E-Mail senden“ klicken. Hochgeladene Fotos werden
     <strong>nicht</strong> an unseren Server übertragen.</p>
@@ -282,11 +284,6 @@ footer{
       </thead>
       <tbody>
         <tr>
-          <td>Google Fonts</td>
-          <td>Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland</td>
-          <td>Einheitliche Darstellung der Schriftarten. Die Schriften werden beim Seitenaufruf von Google-Servern geladen.</td>
-        </tr>
-        <tr>
           <td>cdnjs</td>
           <td>Cloudflare, Inc., 101 Townsend St., San Francisco, CA 94107, USA</td>
           <td>Auslieferung der Programmbibliotheken für Animationen und die Grafikdarstellung im Kopfbereich. Wird beim Seitenaufruf geladen.</td>
@@ -300,15 +297,20 @@ footer{
     </table>
   </div>
 
-  <p>Rechtsgrundlage für das Laden von Schriftarten und Programmbibliotheken ist Art. 6 Abs. 1
-  lit. f DSGVO; unser berechtigtes Interesse liegt in der einheitlichen und funktionsfähigen
-  Darstellung unseres Angebots. Das Laden der Karte erfolgt ausschließlich auf Ihre
-  ausdrückliche Handlung hin, Rechtsgrundlage ist insoweit Ihre Einwilligung nach Art. 6 Abs. 1
-  lit. a DSGVO. Bei Google und Cloudflare kann eine Übermittlung von Daten in die USA
-  stattfinden; beide Anbieter sind unter dem EU-US Data Privacy Framework zertifiziert.</p>
+  <p>Rechtsgrundlage für das Laden der Programmbibliotheken ist Art. 6 Abs. 1 lit. f DSGVO;
+  unser berechtigtes Interesse liegt in der funktionsfähigen Darstellung unseres Angebots.
+  Das Laden der Karte erfolgt ausschließlich auf Ihre ausdrückliche Handlung hin,
+  Rechtsgrundlage ist insoweit Ihre Einwilligung nach Art. 6 Abs. 1 lit. a DSGVO. Bei Google
+  und Cloudflare kann eine Übermittlung von Daten in die USA stattfinden; beide Anbieter sind
+  unter dem EU-US Data Privacy Framework zertifiziert.</p>
   <p>Weitere Informationen finden Sie in den Datenschutzhinweisen der Anbieter:
   <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google</a> ·
   <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener noreferrer">Cloudflare</a>.</p>
+
+  <h3>Schriftarten werden lokal ausgeliefert</h3>
+  <p>Die auf dieser Website verwendeten Schriftarten (Inter und Inter Tight) liegen auf unserem
+  eigenen Webspace und werden von dort geladen. Es wird <strong>keine Verbindung zu Servern von
+  Google Fonts</strong> aufgebaut, und es werden dabei keine Daten an Google übertragen.</p>
 
   <h3>Keine Cookies, kein Tracking</h3>
   <p>Wir setzen weder eigene noch fremde Cookies zu Analyse-, Werbe- oder Trackingzwecken ein.

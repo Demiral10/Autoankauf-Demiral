@@ -31,6 +31,20 @@ kein Tracking, Formularversand nur über WhatsApp-Link oder `mailto`, Fotos blei
 Google Maps lädt erst nach Klick. Wird an der Seite etwas davon geändert, muss der Text
 mitgezogen werden.
 
+## Schriften
+
+Inter und Inter Tight werden **lokal** ausgeliefert (`fonts/`, eingebunden über
+`fonts.css`) – es besteht keine Verbindung zu Google Fonts. Das vermeidet die
+Übermittlung der Besucher-IP an Google, die ohne Einwilligung datenschutzrechtlich
+angreifbar ist (vgl. LG München I, Urteil vom 20.01.2022, 3 O 17493/20).
+
+Es handelt sich um Variable Fonts mit der Gewichtsachse 100–900, je ein File pro
+Familie und Subset (`latin`, `latin-ext`) – zusammen rund 262 KB. Beide Schriften
+stehen unter der SIL Open Font License 1.1.
+
+Sollen weitere Zeichensätze unterstützt werden (z. B. Kyrillisch oder Griechisch),
+müssen die entsprechenden Subsets ergänzt werden.
+
 ## Link-Vorschaubild
 
 `og-image.png` (1200 × 630) wird von `og:image` und `twitter:image` referenziert und
