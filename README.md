@@ -31,5 +31,7 @@ Die Startseite verlinkt auf folgende Seiten, die noch nicht im Repository liegen
 
 Ebenfalls referenziert, aber noch nicht vorhanden: `og-image.png`, `sitemap.xml`, `robots.txt`.
 
-Außerdem: Im Kopf der `index.html` steht der Hinweis, die Platzhalter-Domain
-`https://www.autoankauf-demiral.de` überall durch die echte Domain zu ersetzen.
+## Domain
+
+Die Seite ist auf `https://www.autoankauf-demiral.de` ausgelegt – Canonical-Tag,
+Open-Graph-URLs und strukturierte Daten verweisen bereits auf diese Domain.
