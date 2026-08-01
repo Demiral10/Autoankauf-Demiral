@@ -84,17 +84,6 @@ h1,h2,h3,h4,h5{font-family:'Inter Tight',sans-serif;font-weight:700;line-height:
 section{position:relative}
 .band{background:var(--bg-soft);border-block:1px solid var(--line)}
 
-/* ---------- Preloader ---------- */
-#preload{
-  position:fixed;inset:0;z-index:200;background:var(--bg);
-  display:flex;align-items:center;justify-content:center;flex-direction:column;gap:22px;
-}
-#preload .pl-mark{font-family:'Inter Tight';font-weight:800;font-size:clamp(24px,4.4vw,40px);letter-spacing:-.035em}
-#preload .pl-mark span{color:var(--blue)}
-.pl-bar{width:min(260px,50vw);height:3px;background:var(--bg-soft2);overflow:hidden;border-radius:3px}
-.pl-bar i{display:block;height:100%;width:0;background:var(--blue)}
-.pl-num{font-size:12.5px;color:var(--ink-3);font-variant-numeric:tabular-nums}
-
 /* ---------- Nav ---------- */
 header.nav{
   position:fixed;top:0;left:0;right:0;z-index:90;
@@ -445,6 +434,8 @@ footer{border-top:1px solid var(--line);margin-top:clamp(70px,9vw,120px);padding
 .sticky-bar a.o{border:1px solid var(--line-2)}
 
 .rv{opacity:0;transform:translateY(22px)}
+/* Hero ist ohne JS sofort sichtbar — kein Warten auf Skripte */
+.hero .rv{opacity:1;transform:none}
 
 @media (max-width:1080px){
   .city-grid{grid-template-columns:repeat(2,1fr)}
@@ -584,11 +575,7 @@ footer{border-top:1px solid var(--line);margin-top:clamp(70px,9vw,120px);padding
 </head>
 <body>
 
-<div id="preload">
-  <div class="pl-mark">Automobile <span>Demiral</span></div>
-  <div class="pl-bar"><i></i></div>
-  <div class="pl-num"><span id="plnum">00</span> %</div>
-</div>
+<noscript><style>.rv{opacity:1 !important;transform:none !important}</style></noscript>
 
 <!-- ===== NAV ===== -->
 <header class="nav">
@@ -1142,11 +1129,11 @@ footer{border-top:1px solid var(--line);margin-top:clamp(70px,9vw,120px);padding
   <a class="b" href="#bewertung">Bewerten</a>
 </div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 <script>
-(function(){
+function initSite(){
 "use strict";
 var HAS_GSAP = typeof gsap !== 'undefined';
 if (HAS_GSAP && typeof ScrollTrigger !== 'undefined') gsap.registerPlugin(ScrollTrigger);
@@ -1346,32 +1333,13 @@ var SIL = { setProgress:function(){}, assemble:function(){} };
 })();
 
 /* =========================================================
-   2) Preloader + Hero-Intro
+   2) Hero-Start (ohne Preloader — Seite ist sofort nutzbar)
    ========================================================= */
-(function preloader(){
-  var pl = $('#preload'), bar = $('.pl-bar i'), num = $('#plnum');
-  var o = {v:0};
-  function done(){
-    SIL.assemble();
-    if(!HAS_GSAP || REDUCED){ if(pl) pl.style.display='none'; document.body.classList.remove('is-locked'); return; }
-    gsap.timeline()
-      .to(pl, {yPercent:-100, duration:1, ease:'power4.inOut'})
-      .set(pl, {display:'none'})
-      .from('.nav', {y:-70, opacity:0, duration:.85, ease:'power3.out'}, '-=.5')
-      .from('.hero-line > span', {yPercent:112, duration:1.1, stagger:.085, ease:'power4.out'}, '-=.7')
-      .to('.hero .rv', {opacity:1, y:0, duration:.85, stagger:.075, ease:'power3.out'}, '-=.8')
-      .from('.scroll-hint', {opacity:0, duration:.7}, '-=.4');
-    document.body.classList.remove('is-locked');
-  }
-  document.body.classList.add('is-locked');
-  if(!HAS_GSAP || REDUCED){ setTimeout(done, 200); return; }
-  gsap.to(o, {v:100, duration:1.4, ease:'power2.inOut',
-    onUpdate:function(){
-      var v = Math.round(o.v);
-      if(bar) bar.style.width = v + '%';
-      if(num) num.textContent = v < 10 ? '0'+v : String(v);
-    },
-    onComplete:done});
+(function heroStart(){
+  SIL.assemble();
+  /* Hero-Inhalte sind bereits per CSS sichtbar; hier nur noch
+     sicherstellen, dass kein Alt-Zustand die Seite blockiert. */
+  document.body.classList.remove('is-locked');
 })();
 
 /* =========================================================
@@ -1935,7 +1903,10 @@ function makeCombo(wrapId, listId, inputId, getGroups, onPick){
 })();
 
 $('#yr').textContent = new Date().getFullYear();
-})();
+}
+/* Laeuft, sobald die defer-Skripte geladen sind — die Seite ist da vorher schon sichtbar */
+if(document.readyState === 'loading') document.addEventListener('DOMContentLoaded', initSite);
+else initSite();
 </script>
 </body>
 </html>
