@@ -108,11 +108,6 @@ dl.data dt:first-of-type,dl.data dd:first-of-type{border-top:0}
   dl.data dd:first-of-type{border-top:0}
 }
 
-table.svc{width:100%;border-collapse:collapse;margin:16px 0;font-size:15px}
-table.svc th,table.svc td{text-align:left;padding:11px 12px;border-bottom:1px solid var(--line);vertical-align:top}
-table.svc th{font-weight:600;color:var(--ink-2);background:var(--bg-soft)}
-.tbl-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
-
 footer{
   border-top:1px solid var(--line);background:var(--bg-soft);
   padding:34px var(--gut);margin-top:20px;
@@ -145,8 +140,9 @@ footer{
   <div class="card good">
     <h3>Das Wichtigste vorab</h3>
     <p>Diese Website setzt <strong>keine Cookies</strong>, verwendet <strong>keine Analyse- oder
-    Tracking-Dienste</strong> und erstellt <strong>keine Nutzerprofile</strong>. Die Schriftarten
-    werden <strong>lokal ausgeliefert</strong>, nicht von Google Fonts geladen. Die Angaben, die
+    Tracking-Dienste</strong> und erstellt <strong>keine Nutzerprofile</strong>. Schriftarten und
+    Programmbibliotheken werden <strong>lokal ausgeliefert</strong>; beim Aufruf der Seite werden
+    keine Daten an Dritte übertragen. Die Angaben, die
     Sie in das Bewertungsformular eintragen, verlassen Ihren Browser erst, wenn Sie selbst auf
     „Per WhatsApp senden“ oder „Per E-Mail senden“ klicken. Hochgeladene Fotos werden
     <strong>nicht</strong> an unseren Server übertragen.</p>
@@ -273,44 +269,31 @@ footer{
   Wenn Sie das vermeiden möchten, nutzen Sie bitte Telefon, Fax oder E-Mail.</p>
 
   <h2 id="dritte">6. Eingebundene Dienste Dritter</h2>
-  <p>Für die Darstellung und Funktion der Website binden wir die folgenden externen Ressourcen
-  ein. In allen Fällen wird Ihre IP-Adresse technisch bedingt an den jeweiligen Anbieter
-  übertragen, da diese ohne IP-Adresse keine Daten an Ihren Browser ausliefern könnten.</p>
+  <p>Beim bloßen Aufruf dieser Website werden <strong>keine Daten an Dritte übertragen</strong>.
+  Sämtliche für die Darstellung benötigten Dateien – Schriftarten, Programmbibliotheken, Bilder
+  und Symbole – liegen auf unserem eigenen Webspace und werden ausschließlich von dort geladen.</p>
 
-  <div class="tbl-wrap">
-    <table class="svc">
-      <thead>
-        <tr><th>Dienst</th><th>Anbieter</th><th>Zweck &amp; Zeitpunkt</th></tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>cdnjs</td>
-          <td>Cloudflare, Inc., 101 Townsend St., San Francisco, CA 94107, USA</td>
-          <td>Auslieferung der Programmbibliotheken für Animationen und die Grafikdarstellung im Kopfbereich. Wird beim Seitenaufruf geladen.</td>
-        </tr>
-        <tr>
-          <td>Google Maps</td>
-          <td>Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland</td>
-          <td>Anzeige unseres Standorts. Die Karte wird <strong>erst nach Ihrem Klick</strong> auf die Schaltfläche geladen – vorher findet keine Verbindung zu Google Maps statt.</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+  <h3>Schriftarten und Programmbibliotheken</h3>
+  <p>Die verwendeten Schriftarten (Inter und Inter Tight) sowie die Programmbibliotheken für die
+  Animationen und die Grafikdarstellung im Kopfbereich der Startseite werden lokal ausgeliefert.
+  Es wird <strong>keine Verbindung zu Google Fonts, zu Content-Delivery-Netzwerken wie cdnjs
+  oder Cloudflare oder zu vergleichbaren Anbietern</strong> aufgebaut. Eine Übermittlung Ihrer
+  IP-Adresse an solche Dienste findet nicht statt.</p>
 
-  <p>Rechtsgrundlage für das Laden der Programmbibliotheken ist Art. 6 Abs. 1 lit. f DSGVO;
-  unser berechtigtes Interesse liegt in der funktionsfähigen Darstellung unseres Angebots.
-  Das Laden der Karte erfolgt ausschließlich auf Ihre ausdrückliche Handlung hin,
-  Rechtsgrundlage ist insoweit Ihre Einwilligung nach Art. 6 Abs. 1 lit. a DSGVO. Bei Google
-  und Cloudflare kann eine Übermittlung von Daten in die USA stattfinden; beide Anbieter sind
-  unter dem EU-US Data Privacy Framework zertifiziert.</p>
-  <p>Weitere Informationen finden Sie in den Datenschutzhinweisen der Anbieter:
-  <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google</a> ·
-  <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener noreferrer">Cloudflare</a>.</p>
-
-  <h3>Schriftarten werden lokal ausgeliefert</h3>
-  <p>Die auf dieser Website verwendeten Schriftarten (Inter und Inter Tight) liegen auf unserem
-  eigenen Webspace und werden von dort geladen. Es wird <strong>keine Verbindung zu Servern von
-  Google Fonts</strong> aufgebaut, und es werden dabei keine Daten an Google übertragen.</p>
+  <h3>Google Maps – ausschließlich nach Ihrem Klick</h3>
+  <p>Im Kontaktbereich der Startseite können Sie sich unseren Standort auf einer Karte anzeigen
+  lassen. Diese Karte ist <strong>nicht automatisch eingebunden</strong>. Sie wird erst geladen,
+  wenn Sie die entsprechende Schaltfläche aktiv anklicken. Solange Sie das nicht tun, besteht
+  keinerlei Verbindung zu Google.</p>
+  <p>Klicken Sie die Schaltfläche an, wird eine Karte von Google Maps nachgeladen. Anbieter ist
+  die Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland. Dabei wird Ihre
+  IP-Adresse an Google übertragen; eine Übermittlung in die USA kann stattfinden. Google ist
+  unter dem EU-US Data Privacy Framework zertifiziert, sodass ein Angemessenheitsbeschluss der
+  EU-Kommission nach Art. 45 DSGVO als Grundlage der Übermittlung dient.</p>
+  <p>Rechtsgrundlage ist Ihre Einwilligung nach Art. 6 Abs. 1 lit. a DSGVO, die Sie durch das
+  Anklicken der Schaltfläche erteilen. Sie können diese Einwilligung jederzeit mit Wirkung für
+  die Zukunft widerrufen, indem Sie die Karte nicht erneut laden. Näheres entnehmen Sie der
+  <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Datenschutzerklärung von Google</a>.</p>
 
   <h3>Keine Cookies, kein Tracking</h3>
   <p>Wir setzen weder eigene noch fremde Cookies zu Analyse-, Werbe- oder Trackingzwecken ein.
